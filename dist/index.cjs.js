@@ -2589,7 +2589,7 @@ var WalletCard = function (_a) {
             window.localStorage.setItem(localStorageKey, "1");
             onDismiss();
         }, style: { justifyContent: "space-between" }, mb: mb, id: "wallet-connect-" + title.toLocaleLowerCase() },
-        React__default['default'].createElement(Text, { bold: true, color: "primary", mr: "16px" }, title),
+        React__default['default'].createElement(Text, { bold: true, color: "#fff", mr: "16px", style: { fontFamily: "Reggae One" } }, title),
         React__default['default'].createElement(Icon, { width: "32px" })));
 };
 
