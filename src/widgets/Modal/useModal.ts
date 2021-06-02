@@ -3,6 +3,10 @@ import { Context } from "./ModalContext";
 import { Handler } from "./types";
 
 const useModal = (modal: React.ReactNode, closeOnOverlayClick = true): [Handler, Handler] => {
+  return modalHelper(modal, closeOnOverlayClick);
+};
+
+const modalHelper = (modal: React.ReactNode, closeOnOverlayClick = true): [Handler, Handler] => {
   const { onPresent, onDismiss, setCloseOnOverlayClick } = useContext(Context);
   const onPresentCallback = useCallback(() => {
     onPresent(modal);
@@ -13,6 +17,10 @@ const useModal = (modal: React.ReactNode, closeOnOverlayClick = true): [Handler,
   }, [closeOnOverlayClick, setCloseOnOverlayClick]);
 
   return [onPresentCallback, onDismiss];
+}
+
+export const ModalWrapper = (modal: React.ReactNode, closeOnOverlayClick = true): [Handler, Handler] => {
+  return modalHelper(modal, closeOnOverlayClick);
 };
 
 export default useModal;
