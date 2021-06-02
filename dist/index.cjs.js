@@ -1831,6 +1831,10 @@ var templateObject_1$w;
 
 var useModal = function (modal, closeOnOverlayClick) {
     if (closeOnOverlayClick === void 0) { closeOnOverlayClick = true; }
+    return modalHelper(modal, closeOnOverlayClick);
+};
+var modalHelper = function (modal, closeOnOverlayClick) {
+    if (closeOnOverlayClick === void 0) { closeOnOverlayClick = true; }
     var _a = React.useContext(Context), onPresent = _a.onPresent, onDismiss = _a.onDismiss, setCloseOnOverlayClick = _a.setCloseOnOverlayClick;
     var onPresentCallback = React.useCallback(function () {
         onPresent(modal);
@@ -1839,6 +1843,10 @@ var useModal = function (modal, closeOnOverlayClick) {
         setCloseOnOverlayClick(closeOnOverlayClick);
     }, [closeOnOverlayClick, setCloseOnOverlayClick]);
     return [onPresentCallback, onDismiss];
+};
+var ModalWrapper$1 = function (modal, closeOnOverlayClick) {
+    if (closeOnOverlayClick === void 0) { closeOnOverlayClick = true; }
+    return modalHelper(modal, closeOnOverlayClick);
 };
 
 var Icon$I = function (props) {
@@ -3079,6 +3087,7 @@ exports.Menu = Menu;
 exports.MinusIcon = Icon$s;
 exports.Modal = Modal;
 exports.ModalProvider = ModalProvider;
+exports.ModalWrapper = ModalWrapper$1;
 exports.OpenNewIcon = Icon$t;
 exports.PancakeRoundIcon = Icon$v;
 exports.PancakesIcon = Icon$u;
