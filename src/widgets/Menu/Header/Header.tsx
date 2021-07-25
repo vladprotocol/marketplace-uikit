@@ -21,6 +21,7 @@ const Header: React.FC<Props> = ({
 }) => {
   return (
     <>
+      <div className="mkt-bg">
       {/* <!-- Start of Navigation --> */}
       <section className="navbar-sec">
         <nav className="navbar navbar-expand-lg navbar-dark">
@@ -73,21 +74,21 @@ const Header: React.FC<Props> = ({
               </ul>
               <ul className="top-sm-nav ms-3">
                 <li>
-                  <Link to="https://t.me/VladFinanceOfficial" target="_blank">
+                  <Link to="https://t.me/VladFinanceOfficial" >
                     <div>
                       <img src="assets/images/telegramicon.svg" className="img-fluid" alt="" />
                     </div>
                   </Link>
                 </li>
                 <li>
-                  <Link to="https://vlad-finance.medium.com/" target="_blank">
+                  <Link to="https://vlad-finance.medium.com/">
                     <div>
                       <img src="assets/images/mediumicon.svg" className="img-fluid" alt="" />
                     </div>
                   </Link>
                 </li>
                 <li>
-                  <Link to="https://twitter.com/VladFinance" target="_blank">
+                  <Link to="https://twitter.com/VladFinance">
                     <div>
                       <img src="assets/images/twitter-logo.svg" className="img-fluid" alt="" />
                     </div>
@@ -95,6 +96,15 @@ const Header: React.FC<Props> = ({
                 </li>
               </ul>
               <ul className="tp-navconnect ms-3">
+
+                {/* Connect wallet Popup */}
+                <li>
+                  <Flex>
+                    <UserBlock account={account} login={login} logout={logout} />
+                    {profile && <Avatar profile={profile} />}
+                </Flex>
+                </li>
+                {/* End of Wallet Popup */}
                 <li>
                   <Link to="/" target="_blank" className="cmynft" data-bs-toggle="modal" data-bs-target="#myNft">
                     <div>My NFT</div>
@@ -103,12 +113,6 @@ const Header: React.FC<Props> = ({
               </ul>
             </div>
           </div>
-          {/* Connect wallet Popup */}
-          <Flex>
-            <UserBlock account={account} login={login} logout={logout} />
-            {profile && <Avatar profile={profile} />}
-          </Flex>
-          {/* End of Wallet Popup */}
           {/* Connect myNft Popup */}
           <div
             className="ctm-modal modal fade"
@@ -159,6 +163,7 @@ const Header: React.FC<Props> = ({
         </nav>
       </section>
       {/* <!-- End of Navigation --> */}
+      </div>
     </>
   )
 }

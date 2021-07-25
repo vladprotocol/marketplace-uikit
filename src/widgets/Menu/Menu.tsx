@@ -113,7 +113,7 @@ const Menu: React.FC<NavProps> = ({
   const homeLink = links.find((link) => link.label === "Home");
 
   return (
-    <Wrapper>
+    <div className="mp-main-content">
       <Header account={account} login={login} profile={profile} logout={logout} />
       <BodyWrapper>
         <Inner isPushed={isPushed} showMenu={showMenu}>
@@ -121,7 +121,7 @@ const Menu: React.FC<NavProps> = ({
         </Inner>
         <MobileOnlyOverlay show={isPushed} onClick={() => setIsPushed(false)} role="presentation" />
       </BodyWrapper>
-    </Wrapper>
+    </div>
   );
 };
 

@@ -45,6 +45,7 @@ const getButtonVariantProp = (prop: keyof ButtonThemeVariant) => ({
   return theme.button[variant][prop];
 };
 
+
 const StyledButton = styled.button<ButtonProps>`
   align-items: center;
   background-color: ${getButtonVariantProp("background")};
@@ -64,14 +65,18 @@ const StyledButton = styled.button<ButtonProps>`
   line-height: 1;
   letter-spacing: 0.03em;
   justify-content: center;
-  outline: 0;
-  padding: ${({ size }) => (size === "sm" ? "0 16px" : "0 24px")};
-  transition: background-color 0.2s;
-  opacity: ${({ isLoading }) => (isLoading ? 0.5 : 1)};
+  background-color: ${getButtonVariantProp("backgroundHover")};
+  border-color: ${getButtonVariantProp("borderColorHover")};
+}
 
-  &:hover:not(:disabled):not(.button--disabled):not(:active) {
-    background-color: ${getButtonVariantProp("backgroundHover")};
-    border-color: ${getButtonVariantProp("borderColorHover")};
+&:focus:not(:active) {
+  box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.secondary};
+}
+
+&:active {
+  background-color: ${getButtonVariantProp("backgroundActive")};
+  box-shadow: ${getButtonVariantProp("boxShadowActive")};
+}lorHover")};
   }
 
   &:focus:not(:active) {

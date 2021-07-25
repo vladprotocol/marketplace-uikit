@@ -159,19 +159,16 @@ var getButtonVariantProp = function (prop) { return function (_a) {
     var theme = _a.theme, _b = _a.variant, variant = _b === void 0 ? variants.PRIMARY : _b;
     return theme.button[variant][prop];
 }; };
-var StyledButton = styled.button(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: #fff;\n  text-shadow: 0px 0px 15px rgb(185 13 13 / 50%), 0px 0px 3px rgb(238 238 238 / 25%), 0px 0px 6px #ed3e3e;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: 'Reggae One';\n  font-size: 16px;\n  font-weight: 600;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  height: ", ";\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  outline: 0;\n  padding: ", ";\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  &:hover:not(:disabled):not(.button--disabled):not(:active) {\n    background-color: ", ";\n    border-color: ", ";\n  }\n\n  &:focus:not(:active) {\n    box-shadow: 0 0 0 2px ", ";\n  }\n\n  &:active {\n    background-color: ", ";\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: #fff;\n  text-shadow: 0px 0px 15px rgb(185 13 13 / 50%), 0px 0px 3px rgb(238 238 238 / 25%), 0px 0px 6px #ed3e3e;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: 'Reggae One';\n  font-size: 16px;\n  font-weight: 600;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  height: ", ";\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  outline: 0;\n  padding: ", ";\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  &:hover:not(:disabled):not(.button--disabled):not(:active) {\n    background-color: ", ";\n    border-color: ", ";\n  }\n\n  &:focus:not(:active) {\n    box-shadow: 0 0 0 2px ", ";\n  }\n\n  &:active {\n    background-color: ", ";\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n"])), getButtonVariantProp("background"), getButtonVariantProp("border"), getButtonVariantProp("boxShadow"), function (_a) {
+var StyledButton = styled.button(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: #fff;\n  text-shadow: 0px 0px 15px rgb(185 13 13 / 50%), 0px 0px 3px rgb(238 238 238 / 25%), 0px 0px 6px #ed3e3e;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: 'Reggae One';\n  font-size: 16px;\n  font-weight: 600;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  height: ", ";\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  background-color: ", ";\n  border-color: ", ";\n}\n\n&:focus:not(:active) {\n  box-shadow: 0 0 0 2px ", ";\n}\n\n&:active {\n  background-color: ", ";\n  box-shadow: ", ";\n}lorHover\")};\n  }\n\n  &:focus:not(:active) {\n    box-shadow: 0 0 0 2px ", ";\n  }\n\n  &:active {\n    background-color: ", ";\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: #fff;\n  text-shadow: 0px 0px 15px rgb(185 13 13 / 50%), 0px 0px 3px rgb(238 238 238 / 25%), 0px 0px 6px #ed3e3e;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: 'Reggae One';\n  font-size: 16px;\n  font-weight: 600;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  height: ", ";\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  background-color: ", ";\n  border-color: ", ";\n}\n\n&:focus:not(:active) {\n  box-shadow: 0 0 0 2px ", ";\n}\n\n&:active {\n  background-color: ", ";\n  box-shadow: ", ";\n}lorHover\")};\n  }\n\n  &:focus:not(:active) {\n    box-shadow: 0 0 0 2px ", ";\n  }\n\n  &:active {\n    background-color: ", ";\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n"])), getButtonVariantProp("background"), getButtonVariantProp("border"), getButtonVariantProp("boxShadow"), function (_a) {
     var fullWidth = _a.fullWidth;
     return (fullWidth ? "100%" : "max-content");
 }, function (_a) {
     var size = _a.size;
     return (size === "sm" ? "32px" : "48px");
-}, function (_a) {
-    var size = _a.size;
-    return (size === "sm" ? "0 16px" : "0 24px");
-}, function (_a) {
-    var isLoading = _a.isLoading;
-    return (isLoading ? 0.5 : 1);
 }, getButtonVariantProp("backgroundHover"), getButtonVariantProp("borderColorHover"), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.secondary;
+}, getButtonVariantProp("backgroundActive"), getButtonVariantProp("boxShadowActive"), function (_a) {
     var theme = _a.theme;
     return theme.colors.secondary;
 }, getButtonVariantProp("backgroundActive"), getButtonVariantProp("boxShadowActive"), getDisabledStyles, removePointerEvents, space);
@@ -2073,72 +2070,74 @@ var templateObject_1$z, templateObject_2$b;
 var Header = function (_a) {
     var account = _a.account, login = _a.login, logout = _a.logout, profile = _a.profile;
     return (React.createElement(React.Fragment, null,
-        React.createElement("section", { className: "navbar-sec" },
-            React.createElement("nav", { className: "navbar navbar-expand-lg navbar-dark" },
-                React.createElement("div", { className: "container" },
-                    React.createElement("a", { className: "navbar-brand", href: "./" },
-                        React.createElement("i", null,
-                            React.createElement("img", { src: "assets/images/vladcirclelogo.png", className: "img-fluid", alt: "Vlad Finance Logo" })),
-                        "Vlad.Finance"),
-                    React.createElement("button", { className: "navbar-toggler", id: "mbtn", type: "button", "data-bs-toggle": "collapse", "data-bs-target": "#navbarSupportedContent", "aria-controls": "navbarSupportedContent", "aria-expanded": "false", "aria-label": "Toggle navigation" },
-                        React.createElement("span", { className: "navbar-toggler-icon" })),
-                    React.createElement("div", { className: "collapse navbar-collapse", id: "navbarSupportedContent" },
-                        React.createElement("ul", { className: "navbar-nav ms-auto mb-2 mb-lg-0 tp-nav" },
-                            React.createElement("li", { className: "nav-item" },
-                                React.createElement(Link$1, { className: "nav-link", to: "/token-facts.html" }, "Token Facts")),
-                            React.createElement("li", { className: "nav-item" },
-                                React.createElement(Link$1, { className: "nav-link", to: "https://app.vlad.finance" }, "Farms")),
-                            React.createElement("li", { className: "nav-item" },
-                                React.createElement(Link$1, { className: "nav-link", to: "https://app.vlad.finance/nft" }, "NFTs")),
-                            React.createElement("li", { className: "nav-item" },
-                                React.createElement("a", { className: "nav-link", href: "team.html" }, "Team")),
-                            React.createElement("li", { className: "nav-item" },
-                                React.createElement("a", { className: "nav-link pactive", href: "market-place.html" }, "Marketplace"))),
-                        React.createElement("ul", { className: "top-sm-nav ms-3" },
-                            React.createElement("li", null,
-                                React.createElement(Link$1, { to: "https://t.me/VladFinanceOfficial", target: "_blank" },
-                                    React.createElement("div", null,
-                                        React.createElement("img", { src: "assets/images/telegramicon.svg", className: "img-fluid", alt: "" })))),
-                            React.createElement("li", null,
-                                React.createElement(Link$1, { to: "https://vlad-finance.medium.com/", target: "_blank" },
-                                    React.createElement("div", null,
-                                        React.createElement("img", { src: "assets/images/mediumicon.svg", className: "img-fluid", alt: "" })))),
-                            React.createElement("li", null,
-                                React.createElement(Link$1, { to: "https://twitter.com/VladFinance", target: "_blank" },
-                                    React.createElement("div", null,
-                                        React.createElement("img", { src: "assets/images/twitter-logo.svg", className: "img-fluid", alt: "" }))))),
-                        React.createElement("ul", { className: "tp-navconnect ms-3" },
-                            React.createElement("li", null,
-                                React.createElement(Link$1, { to: "/", target: "_blank", className: "cmynft", "data-bs-toggle": "modal", "data-bs-target": "#myNft" },
-                                    React.createElement("div", null, "My NFT")))))),
-                React.createElement(Flex, null,
-                    React.createElement(UserBlock, { account: account, login: login, logout: logout }),
-                    profile && React.createElement(Avatar, { profile: profile })),
-                React.createElement("div", { className: "ctm-modal modal fade", id: "myNft", tabIndex: -1, "aria-labelledby": "exampleModalLabel", "aria-hidden": "true" },
-                    React.createElement("div", { className: "modal-dialog ctmmodal-dialog" },
-                        React.createElement("div", { className: "modal-content" },
-                            React.createElement("div", { className: "modal-header" },
-                                React.createElement("h5", { className: "modal-title", id: "exampleModalLabel" },
-                                    React.createElement("img", { src: "assets/images/wallet.svg", alt: "wallet icon" }),
-                                    "Account"),
-                                React.createElement("button", { type: "button", className: "btn-close ctm-btnclose", "data-bs-dismiss": "modal", "aria-label": "Close" }, "CANCEL")),
-                            React.createElement("div", { className: "modal-body" },
-                                React.createElement("hr", null),
-                                React.createElement("p", null,
-                                    "Connected with ",
-                                    React.createElement("b", null, "Wallet Connect")),
-                                React.createElement("ul", { className: "mynft-body" },
-                                    React.createElement("li", null,
-                                        React.createElement(Link$1, { to: "/" },
-                                            "0x1b82...6666",
-                                            ' ',
-                                            React.createElement("span", null,
-                                                React.createElement("img", { src: "assets/images/external-link.svg", alt: "external" }))))),
-                                React.createElement("ul", { className: "account-action" },
-                                    React.createElement("li", null,
-                                        React.createElement(Link$1, { to: "/" }, "Log Out")),
-                                    React.createElement("li", null,
-                                        React.createElement(Link$1, { to: "/" }, "Copy Address")))))))))));
+        React.createElement("div", { className: "mkt-bg" },
+            React.createElement("section", { className: "navbar-sec" },
+                React.createElement("nav", { className: "navbar navbar-expand-lg navbar-dark" },
+                    React.createElement("div", { className: "container" },
+                        React.createElement("a", { className: "navbar-brand", href: "./" },
+                            React.createElement("i", null,
+                                React.createElement("img", { src: "assets/images/vladcirclelogo.png", className: "img-fluid", alt: "Vlad Finance Logo" })),
+                            "Vlad.Finance"),
+                        React.createElement("button", { className: "navbar-toggler", id: "mbtn", type: "button", "data-bs-toggle": "collapse", "data-bs-target": "#navbarSupportedContent", "aria-controls": "navbarSupportedContent", "aria-expanded": "false", "aria-label": "Toggle navigation" },
+                            React.createElement("span", { className: "navbar-toggler-icon" })),
+                        React.createElement("div", { className: "collapse navbar-collapse", id: "navbarSupportedContent" },
+                            React.createElement("ul", { className: "navbar-nav ms-auto mb-2 mb-lg-0 tp-nav" },
+                                React.createElement("li", { className: "nav-item" },
+                                    React.createElement(Link$1, { className: "nav-link", to: "/token-facts.html" }, "Token Facts")),
+                                React.createElement("li", { className: "nav-item" },
+                                    React.createElement(Link$1, { className: "nav-link", to: "https://app.vlad.finance" }, "Farms")),
+                                React.createElement("li", { className: "nav-item" },
+                                    React.createElement(Link$1, { className: "nav-link", to: "https://app.vlad.finance/nft" }, "NFTs")),
+                                React.createElement("li", { className: "nav-item" },
+                                    React.createElement("a", { className: "nav-link", href: "team.html" }, "Team")),
+                                React.createElement("li", { className: "nav-item" },
+                                    React.createElement("a", { className: "nav-link pactive", href: "market-place.html" }, "Marketplace"))),
+                            React.createElement("ul", { className: "top-sm-nav ms-3" },
+                                React.createElement("li", null,
+                                    React.createElement(Link$1, { to: "https://t.me/VladFinanceOfficial" },
+                                        React.createElement("div", null,
+                                            React.createElement("img", { src: "assets/images/telegramicon.svg", className: "img-fluid", alt: "" })))),
+                                React.createElement("li", null,
+                                    React.createElement(Link$1, { to: "https://vlad-finance.medium.com/" },
+                                        React.createElement("div", null,
+                                            React.createElement("img", { src: "assets/images/mediumicon.svg", className: "img-fluid", alt: "" })))),
+                                React.createElement("li", null,
+                                    React.createElement(Link$1, { to: "https://twitter.com/VladFinance" },
+                                        React.createElement("div", null,
+                                            React.createElement("img", { src: "assets/images/twitter-logo.svg", className: "img-fluid", alt: "" }))))),
+                            React.createElement("ul", { className: "tp-navconnect ms-3" },
+                                React.createElement("li", null,
+                                    React.createElement(Flex, null,
+                                        React.createElement(UserBlock, { account: account, login: login, logout: logout }),
+                                        profile && React.createElement(Avatar, { profile: profile }))),
+                                React.createElement("li", null,
+                                    React.createElement(Link$1, { to: "/", target: "_blank", className: "cmynft", "data-bs-toggle": "modal", "data-bs-target": "#myNft" },
+                                        React.createElement("div", null, "My NFT")))))),
+                    React.createElement("div", { className: "ctm-modal modal fade", id: "myNft", tabIndex: -1, "aria-labelledby": "exampleModalLabel", "aria-hidden": "true" },
+                        React.createElement("div", { className: "modal-dialog ctmmodal-dialog" },
+                            React.createElement("div", { className: "modal-content" },
+                                React.createElement("div", { className: "modal-header" },
+                                    React.createElement("h5", { className: "modal-title", id: "exampleModalLabel" },
+                                        React.createElement("img", { src: "assets/images/wallet.svg", alt: "wallet icon" }),
+                                        "Account"),
+                                    React.createElement("button", { type: "button", className: "btn-close ctm-btnclose", "data-bs-dismiss": "modal", "aria-label": "Close" }, "CANCEL")),
+                                React.createElement("div", { className: "modal-body" },
+                                    React.createElement("hr", null),
+                                    React.createElement("p", null,
+                                        "Connected with ",
+                                        React.createElement("b", null, "Wallet Connect")),
+                                    React.createElement("ul", { className: "mynft-body" },
+                                        React.createElement("li", null,
+                                            React.createElement(Link$1, { to: "/" },
+                                                "0x1b82...6666",
+                                                ' ',
+                                                React.createElement("span", null,
+                                                    React.createElement("img", { src: "assets/images/external-link.svg", alt: "external" }))))),
+                                    React.createElement("ul", { className: "account-action" },
+                                        React.createElement("li", null,
+                                            React.createElement(Link$1, { to: "/" }, "Log Out")),
+                                        React.createElement("li", null,
+                                            React.createElement(Link$1, { to: "/" }, "Copy Address"))))))))))));
 };
 var Header$1 = React.memo(Header);
 
@@ -2260,7 +2259,7 @@ var MENU_HEIGHT = 64;
 var SIDEBAR_WIDTH_FULL = 240;
 var SIDEBAR_WIDTH_REDUCED = 56;
 
-var Wrapper$1 = styled.div(templateObject_1$A || (templateObject_1$A = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
+styled.div(templateObject_1$A || (templateObject_1$A = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
 styled.nav(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding-left: 8px;\n  padding-right: 16px;\n  width: 100%;\n  height: ", "px;\n  background-color: ", ";\n  border-bottom: solid 2px rgba(133, 133, 133, 0.1);\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"], ["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding-left: 8px;\n  padding-right: 16px;\n  width: 100%;\n  height: ", "px;\n  background-color: ", ";\n  border-bottom: solid 2px rgba(133, 133, 133, 0.1);\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
     var showMenu = _a.showMenu;
     return (showMenu ? 0 : "-" + MENU_HEIGHT + "px");
@@ -2320,7 +2319,7 @@ var Menu = function (_a) {
     }, []);
     // Find the home link if provided
     links.find(function (link) { return link.label === "Home"; });
-    return (React.createElement(Wrapper$1, null,
+    return (React.createElement("div", { className: "mp-main-content" },
         React.createElement(Header$1, { account: account, login: login, profile: profile, logout: logout }),
         React.createElement(BodyWrapper, null,
             React.createElement(Inner, { isPushed: isPushed, showMenu: showMenu }, children),
