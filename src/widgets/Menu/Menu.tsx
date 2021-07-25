@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import throttle from "lodash/throttle";
 import Overlay from "../../components/Overlay/Overlay";
+import Header from "./Header";
 import { Flex } from "../../components/Flex";
 import { useMatchBreakpoints } from "../../hooks";
 import Logo from "./Logo";
@@ -113,33 +114,8 @@ const Menu: React.FC<NavProps> = ({
 
   return (
     <Wrapper>
-      <StyledNav showMenu={showMenu}>
-        <Logo
-          isPushed={isPushed}
-          togglePush={() => setIsPushed((prevState: boolean) => !prevState)}
-          isDark={isDark}
-          href={homeLink?.href ?? "/"}
-        />
-        <Flex>
-          <UserBlock account={account} login={login} logout={logout} />
-          {profile && <Avatar profile={profile} />}
-        </Flex>
-      </StyledNav>
+      <Header account={account} login={login} profile={profile} logout={logout} />
       <BodyWrapper>
-        <Panel
-          isPushed={isPushed}
-          isMobile={isMobile}
-          showMenu={showMenu}
-          isDark={isDark}
-          toggleTheme={toggleTheme}
-          langs={langs}
-          setLang={setLang}
-          currentLang={currentLang}
-          cakePriceUsd={cakePriceUsd}
-          pushNav={setIsPushed}
-          links={links}
-          priceLink={priceLink}
-        />
         <Inner isPushed={isPushed} showMenu={showMenu}>
           {children}
         </Inner>
