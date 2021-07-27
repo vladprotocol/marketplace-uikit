@@ -6,6 +6,7 @@ interface Props {
     login: Login;
     logout: () => void;
     profile: any;
+    isHome?: boolean;
 }
 declare const _default: React.NamedExoticComponent<Props>;
 export default _default;

@@ -2042,6 +2042,30 @@ var UserBlock = function (_a) {
         } }, "Connect"))));
 };
 
+var Banner = function () {
+    return (React__default['default'].createElement("section", { className: "inner-banner" },
+        React__default['default'].createElement("div", { className: "container" },
+            React__default['default'].createElement("div", { className: "row" },
+                React__default['default'].createElement("div", { className: "col-sm-12 col-md-12 inner-banner-text text-center" },
+                    React__default['default'].createElement("div", { className: "innerbannercopy" },
+                        React__default['default'].createElement("h1", null, "Discover, Collect, and Trade NFTs"),
+                        React__default['default'].createElement("p", null, "A curated marketplace for the dark underdwellers."),
+                        React__default['default'].createElement("div", { className: "innerbannercopy-btn" },
+                            React__default['default'].createElement("ul", null,
+                                React__default['default'].createElement("li", null,
+                                    React__default['default'].createElement(reactRouterDom.Link, { to: "/", className: "btn-white" }, "APPLY TO BE LISTED")),
+                                React__default['default'].createElement("li", null,
+                                    React__default['default'].createElement(reactRouterDom.Link, { to: "/", className: "btn-black" }, "EXPLORE"))))))),
+            React__default['default'].createElement("div", { className: "row" },
+                React__default['default'].createElement("div", { className: "col-sm-12 col-md-12 specialcard-wrap" },
+                    React__default['default'].createElement("div", { className: "specialcard" },
+                        React__default['default'].createElement("h2", { className: "section-title" }, "Vlad Genesis Collection"),
+                        React__default['default'].createElement("p", null, "The Vlad Finance genesis collection that started it all."),
+                        React__default['default'].createElement("ul", null,
+                            React__default['default'].createElement("li", null,
+                                React__default['default'].createElement(reactRouterDom.Link, { to: "/" }, "Explore Collection")))))))));
+};
+
 var Icon$O = function (props) {
     var theme = styled.useTheme();
     var primaryColor = theme.isDark ? "#3C3742" : "#e9eaeb";
@@ -2081,9 +2105,9 @@ var Avatar = function (_a) {
 var templateObject_1$z, templateObject_2$b;
 
 var Header = function (_a) {
-    var account = _a.account, login = _a.login, logout = _a.logout, profile = _a.profile;
+    var account = _a.account, login = _a.login, logout = _a.logout, profile = _a.profile, isHome = _a.isHome;
     return (React__default['default'].createElement(React__default['default'].Fragment, null,
-        React__default['default'].createElement("div", { className: "mkt-bg" },
+        React__default['default'].createElement("div", { className: isHome ? "mkt-bg" : "" },
             React__default['default'].createElement("section", { className: "navbar-sec" },
                 React__default['default'].createElement("nav", { className: "navbar navbar-expand-lg navbar-dark" },
                     React__default['default'].createElement("div", { className: "container" },
@@ -2104,7 +2128,7 @@ var Header = function (_a) {
                                 React__default['default'].createElement("li", { className: "nav-item" },
                                     React__default['default'].createElement("a", { className: "nav-link", href: "team.html" }, "Team")),
                                 React__default['default'].createElement("li", { className: "nav-item" },
-                                    React__default['default'].createElement("a", { className: "nav-link pactive", href: "market-place.html" }, "Marketplace"))),
+                                    React__default['default'].createElement(reactRouterDom.Link, { className: "nav-link pactive", to: "/" }, "Marketplace"))),
                             React__default['default'].createElement("ul", { className: "top-sm-nav ms-3" },
                                 React__default['default'].createElement("li", null,
                                     React__default['default'].createElement(reactRouterDom.Link, { to: "https://t.me/VladFinanceOfficial" },
@@ -2150,7 +2174,8 @@ var Header = function (_a) {
                                         React__default['default'].createElement("li", null,
                                             React__default['default'].createElement(reactRouterDom.Link, { to: "/" }, "Log Out")),
                                         React__default['default'].createElement("li", null,
-                                            React__default['default'].createElement(reactRouterDom.Link, { to: "/" }, "Copy Address"))))))))))));
+                                            React__default['default'].createElement(reactRouterDom.Link, { to: "/" }, "Copy Address"))))))))),
+            isHome && React__default['default'].createElement(Banner, null))));
 };
 var Header$1 = React__default['default'].memo(Header);
 
@@ -2296,7 +2321,7 @@ var MobileOnlyOverlay = styled__default['default'](Overlay)(templateObject_5$1 |
     return theme.mediaQueries.nav;
 });
 var Menu = function (_a) {
-    var account = _a.account, login = _a.login, logout = _a.logout; _a.isDark; _a.toggleTheme; _a.langs; _a.setLang; _a.currentLang; _a.cakePriceUsd; var links = _a.links; _a.priceLink; var profile = _a.profile, children = _a.children;
+    var account = _a.account, login = _a.login, logout = _a.logout; _a.isDark; _a.toggleTheme; _a.langs; _a.setLang; _a.currentLang; _a.cakePriceUsd; var links = _a.links; _a.priceLink; var profile = _a.profile, children = _a.children, isHome = _a.isHome;
     var isXl = useMatchBreakpoints().isXl;
     var isMobile = isXl === false;
     var _b = React.useState(!isMobile), isPushed = _b[0], setIsPushed = _b[1];
@@ -2333,7 +2358,7 @@ var Menu = function (_a) {
     // Find the home link if provided
     links.find(function (link) { return link.label === "Home"; });
     return (React__default['default'].createElement("div", { className: "mp-main-content" },
-        React__default['default'].createElement(Header$1, { account: account, login: login, profile: profile, logout: logout }),
+        React__default['default'].createElement(Header$1, { account: account, login: login, profile: profile, logout: logout, isHome: isHome }),
         React__default['default'].createElement(BodyWrapper, null,
             React__default['default'].createElement(Inner, { isPushed: isPushed, showMenu: showMenu }, children),
             React__default['default'].createElement(MobileOnlyOverlay, { show: isPushed, onClick: function () { return setIsPushed(false); }, role: "presentation" }))));

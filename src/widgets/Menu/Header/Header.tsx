@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Flex } from "../../../components/Flex";
 import UserBlock from "../UserBlock";
+import Banner from '../Banner';
 import Avatar from "../Avatar";
 import { Login } from "../../WalletModal/types";
 import '../../../style/css/Header.css'
@@ -10,7 +11,8 @@ interface Props {
   account?: string;
   login: Login;
   logout: () => void;
-  profile: any
+  profile: any;
+  isHome?: boolean;
 }
 
 const Header: React.FC<Props> = ({
@@ -18,10 +20,11 @@ const Header: React.FC<Props> = ({
   login,
   logout,
   profile,
+  isHome
 }) => {
   return (
     <>
-      <div className="mkt-bg">
+      <div className={isHome ? "mkt-bg" : ""}>
       {/* <!-- Start of Navigation --> */}
       <section className="navbar-sec">
         <nav className="navbar navbar-expand-lg navbar-dark">
@@ -67,9 +70,9 @@ const Header: React.FC<Props> = ({
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link pactive" href="market-place.html">
+                  <Link className="nav-link pactive" to="/">
                     Marketplace
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <ul className="top-sm-nav ms-3">
@@ -163,6 +166,7 @@ const Header: React.FC<Props> = ({
         </nav>
       </section>
       {/* <!-- End of Navigation --> */}
+      {isHome && <Banner /> }
       </div>
     </>
   )

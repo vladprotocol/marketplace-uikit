@@ -2029,6 +2029,30 @@ var UserBlock = function (_a) {
         } }, "Connect"))));
 };
 
+var Banner = function () {
+    return (React.createElement("section", { className: "inner-banner" },
+        React.createElement("div", { className: "container" },
+            React.createElement("div", { className: "row" },
+                React.createElement("div", { className: "col-sm-12 col-md-12 inner-banner-text text-center" },
+                    React.createElement("div", { className: "innerbannercopy" },
+                        React.createElement("h1", null, "Discover, Collect, and Trade NFTs"),
+                        React.createElement("p", null, "A curated marketplace for the dark underdwellers."),
+                        React.createElement("div", { className: "innerbannercopy-btn" },
+                            React.createElement("ul", null,
+                                React.createElement("li", null,
+                                    React.createElement(Link$1, { to: "/", className: "btn-white" }, "APPLY TO BE LISTED")),
+                                React.createElement("li", null,
+                                    React.createElement(Link$1, { to: "/", className: "btn-black" }, "EXPLORE"))))))),
+            React.createElement("div", { className: "row" },
+                React.createElement("div", { className: "col-sm-12 col-md-12 specialcard-wrap" },
+                    React.createElement("div", { className: "specialcard" },
+                        React.createElement("h2", { className: "section-title" }, "Vlad Genesis Collection"),
+                        React.createElement("p", null, "The Vlad Finance genesis collection that started it all."),
+                        React.createElement("ul", null,
+                            React.createElement("li", null,
+                                React.createElement(Link$1, { to: "/" }, "Explore Collection")))))))));
+};
+
 var Icon$O = function (props) {
     var theme = useTheme();
     var primaryColor = theme.isDark ? "#3C3742" : "#e9eaeb";
@@ -2068,9 +2092,9 @@ var Avatar = function (_a) {
 var templateObject_1$z, templateObject_2$b;
 
 var Header = function (_a) {
-    var account = _a.account, login = _a.login, logout = _a.logout, profile = _a.profile;
+    var account = _a.account, login = _a.login, logout = _a.logout, profile = _a.profile, isHome = _a.isHome;
     return (React.createElement(React.Fragment, null,
-        React.createElement("div", { className: "mkt-bg" },
+        React.createElement("div", { className: isHome ? "mkt-bg" : "" },
             React.createElement("section", { className: "navbar-sec" },
                 React.createElement("nav", { className: "navbar navbar-expand-lg navbar-dark" },
                     React.createElement("div", { className: "container" },
@@ -2091,7 +2115,7 @@ var Header = function (_a) {
                                 React.createElement("li", { className: "nav-item" },
                                     React.createElement("a", { className: "nav-link", href: "team.html" }, "Team")),
                                 React.createElement("li", { className: "nav-item" },
-                                    React.createElement("a", { className: "nav-link pactive", href: "market-place.html" }, "Marketplace"))),
+                                    React.createElement(Link$1, { className: "nav-link pactive", to: "/" }, "Marketplace"))),
                             React.createElement("ul", { className: "top-sm-nav ms-3" },
                                 React.createElement("li", null,
                                     React.createElement(Link$1, { to: "https://t.me/VladFinanceOfficial" },
@@ -2137,7 +2161,8 @@ var Header = function (_a) {
                                         React.createElement("li", null,
                                             React.createElement(Link$1, { to: "/" }, "Log Out")),
                                         React.createElement("li", null,
-                                            React.createElement(Link$1, { to: "/" }, "Copy Address"))))))))))));
+                                            React.createElement(Link$1, { to: "/" }, "Copy Address"))))))))),
+            isHome && React.createElement(Banner, null))));
 };
 var Header$1 = React.memo(Header);
 
@@ -2283,7 +2308,7 @@ var MobileOnlyOverlay = styled(Overlay)(templateObject_5$1 || (templateObject_5$
     return theme.mediaQueries.nav;
 });
 var Menu = function (_a) {
-    var account = _a.account, login = _a.login, logout = _a.logout; _a.isDark; _a.toggleTheme; _a.langs; _a.setLang; _a.currentLang; _a.cakePriceUsd; var links = _a.links; _a.priceLink; var profile = _a.profile, children = _a.children;
+    var account = _a.account, login = _a.login, logout = _a.logout; _a.isDark; _a.toggleTheme; _a.langs; _a.setLang; _a.currentLang; _a.cakePriceUsd; var links = _a.links; _a.priceLink; var profile = _a.profile, children = _a.children, isHome = _a.isHome;
     var isXl = useMatchBreakpoints().isXl;
     var isMobile = isXl === false;
     var _b = useState(!isMobile), isPushed = _b[0], setIsPushed = _b[1];
@@ -2320,7 +2345,7 @@ var Menu = function (_a) {
     // Find the home link if provided
     links.find(function (link) { return link.label === "Home"; });
     return (React.createElement("div", { className: "mp-main-content" },
-        React.createElement(Header$1, { account: account, login: login, profile: profile, logout: logout }),
+        React.createElement(Header$1, { account: account, login: login, profile: profile, logout: logout, isHome: isHome }),
         React.createElement(BodyWrapper, null,
             React.createElement(Inner, { isPushed: isPushed, showMenu: showMenu }, children),
             React.createElement(MobileOnlyOverlay, { show: isPushed, onClick: function () { return setIsPushed(false); }, role: "presentation" }))));
