@@ -31,7 +31,7 @@ const Header: React.FC<Props> = ({
           <div className="container">
             <a className="navbar-brand" href="./">
               <i>
-                <img src="assets/images/vladcirclelogo.png" className="img-fluid" alt="Vlad Finance Logo" />
+                <img src="/assets/images/vladcirclelogo.png" className="img-fluid" alt="Vlad Finance Logo" />
               </i>
               Vlad.Finance
             </a>
@@ -79,21 +79,21 @@ const Header: React.FC<Props> = ({
                 <li>
                   <Link to="https://t.me/VladFinanceOfficial" >
                     <div>
-                      <img src="assets/images/telegramicon.svg" className="img-fluid" alt="" />
+                      <img src="/assets/images/telegramicon.svg" className="img-fluid" alt="" />
                     </div>
                   </Link>
                 </li>
                 <li>
                   <Link to="https://vlad-finance.medium.com/">
                     <div>
-                      <img src="assets/images/mediumicon.svg" className="img-fluid" alt="" />
+                      <img src="/assets/images/mediumicon.svg" className="img-fluid" alt="" />
                     </div>
                   </Link>
                 </li>
                 <li>
                   <Link to="https://twitter.com/VladFinance">
                     <div>
-                      <img src="assets/images/twitter-logo.svg" className="img-fluid" alt="" />
+                      <img src="/assets/images/twitter-logo.svg" className="img-fluid" alt="" />
                     </div>
                   </Link>
                 </li>
@@ -109,7 +109,7 @@ const Header: React.FC<Props> = ({
                 </li>
                 {/* End of Wallet Popup */}
                 <li>
-                  <Link to="/" target="_blank" className="cmynft" data-bs-toggle="modal" data-bs-target="#myNft">
+                  <Link to="/my-nft" className="cmynft" data-bs-toggle="modal" data-bs-target="#myNft">
                     <div>My NFT</div>
                   </Link>
                 </li>
@@ -128,7 +128,7 @@ const Header: React.FC<Props> = ({
               <div className="modal-content">
                 <div className="modal-header">
                   <h5 className="modal-title" id="exampleModalLabel">
-                    <img src="assets/images/wallet.svg" alt="wallet icon" />
+                    <img src="/assets/images/wallet.svg" alt="wallet icon" />
                     Account
                   </h5>
                   <button type="button" className="btn-close ctm-btnclose" data-bs-dismiss="modal" aria-label="Close">
@@ -145,7 +145,7 @@ const Header: React.FC<Props> = ({
                       <Link to="/">
                         0x1b82...6666{' '}
                         <span>
-                          <img src="assets/images/external-link.svg" alt="external" />
+                          <img src="/assets/images/external-link.svg" alt="external" />
                         </span>
                       </Link>
                     </li>

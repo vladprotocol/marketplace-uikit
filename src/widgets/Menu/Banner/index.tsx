@@ -37,7 +37,7 @@ const Banner = () => {
                 <p>The Vlad Finance genesis collection that started it all.</p>
                 <ul>
                   <li>
-                    <Link to="/">Explore Collection</Link>
+                    <Link to="/vlad-collection">Explore Collection</Link>
                   </li>
                 </ul>
               </div>
