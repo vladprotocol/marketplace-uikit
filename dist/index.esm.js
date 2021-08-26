@@ -1998,13 +1998,19 @@ var CopyToClipboard = function (_a) {
 var templateObject_1$y, templateObject_2$a;
 
 var AccountModal = function (_a) {
-    var account = _a.account; _a.logout; var _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
+    var account = _a.account, logout = _a.logout, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
     return (React.createElement(Modal, { title: "Your wallet", onDismiss: onDismiss },
         React.createElement(Text, { fontSize: "20px", bold: true, style: { whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "8px" } }, account),
         React.createElement(Flex, { mb: "32px" },
             React.createElement(LinkExternal, { small: true, href: "https://bscscan.com/address/" + account, mr: "16px" }, "View on BscScan"),
             React.createElement(CopyToClipboard, { toCopy: account }, "Copy Address")),
-        React.createElement(Flex, { justifyContent: "center" })));
+        React.createElement(Flex, { justifyContent: "center" },
+            React.createElement(Text, { fontSize: "20px", bold: true, style: { whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "8px" }, onClick: function () {
+                    logout();
+                    window.localStorage.removeItem(localStorageKey);
+                    onDismiss();
+                    window.location.reload();
+                } }, "Logout"))));
 };
 
 var useWalletModal = function (login, logout, account) {

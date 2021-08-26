@@ -29,9 +29,10 @@ const AccountModal: React.FC<Props> = ({ account, logout, onDismiss = () => null
       <CopyToClipboard toCopy={account}>Copy Address</CopyToClipboard>
     </Flex>
     <Flex justifyContent="center">
-      {/* <Button
-        size="sm"
-        variant="secondary"
+      <Text
+        fontSize="20px"
+        bold
+        style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "8px" }}
         onClick={() => {
           logout();
           window.localStorage.removeItem(localStorageKey);
@@ -40,7 +41,7 @@ const AccountModal: React.FC<Props> = ({ account, logout, onDismiss = () => null
         }}
       >
         Logout
-      </Button> */}
+      </Text>
     </Flex>
   </Modal>
 );
