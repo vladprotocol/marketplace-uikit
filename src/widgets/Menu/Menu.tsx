@@ -12,29 +12,6 @@ import { NavProps } from "./types";
 import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "./config";
 import Avatar from "./Avatar";
 
-const Wrapper = styled.div`
-  position: relative;
-  width: 100%;
-`;
-
-const StyledNav = styled.nav<{ showMenu: boolean }>`
-  position: fixed;
-  top: ${({ showMenu }) => (showMenu ? 0 : `-${MENU_HEIGHT}px`)};
-  left: 0;
-  transition: top 0.2s;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 8px;
-  padding-right: 16px;
-  width: 100%;
-  height: ${MENU_HEIGHT}px;
-  background-color: ${({ theme }) => theme.nav.background};
-  border-bottom: solid 2px rgba(133, 133, 133, 0.1);
-  z-index: 20;
-  transform: translate3d(0, 0, 0);
-`;
-
 const BodyWrapper = styled.div`
   position: relative;
   display: flex;
@@ -76,9 +53,8 @@ const Menu: React.FC<NavProps> = ({
   isHome
 }) => {
   const { isXl } = useMatchBreakpoints();
-  const isMobile = isXl === false;
-  const [isPushed, setIsPushed] = useState(!isMobile);
-  const [showMenu, setShowMenu] = useState(true);
+  const [isPushed, setIsPushed] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
   const refPrevOffset = useRef(window.pageYOffset);
 
   useEffect(() => {
