@@ -29,7 +29,7 @@ const AccountModal: React.FC<Props> = ({ account, logout, onDismiss = () => null
       <CopyToClipboard toCopy={account}>Copy Address</CopyToClipboard>
     </Flex>
     <Flex justifyContent="center">
-      <Button
+      {/* <Button
         size="sm"
         variant="secondary"
         onClick={() => {
@@ -40,7 +40,7 @@ const AccountModal: React.FC<Props> = ({ account, logout, onDismiss = () => null
         }}
       >
         Logout
-      </Button>
+      </Button> */}
     </Flex>
   </Modal>
 );

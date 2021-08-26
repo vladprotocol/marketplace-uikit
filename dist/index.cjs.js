@@ -2011,19 +2011,13 @@ var CopyToClipboard = function (_a) {
 var templateObject_1$y, templateObject_2$a;
 
 var AccountModal = function (_a) {
-    var account = _a.account, logout = _a.logout, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
+    var account = _a.account; _a.logout; var _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
     return (React__default['default'].createElement(Modal, { title: "Your wallet", onDismiss: onDismiss },
         React__default['default'].createElement(Text, { fontSize: "20px", bold: true, style: { whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "8px" } }, account),
         React__default['default'].createElement(Flex, { mb: "32px" },
             React__default['default'].createElement(LinkExternal, { small: true, href: "https://bscscan.com/address/" + account, mr: "16px" }, "View on BscScan"),
             React__default['default'].createElement(CopyToClipboard, { toCopy: account }, "Copy Address")),
-        React__default['default'].createElement(Flex, { justifyContent: "center" },
-            React__default['default'].createElement(Button, { onClick: function () {
-                    logout();
-                    window.localStorage.removeItem(localStorageKey);
-                    onDismiss();
-                    window.location.reload();
-                } }, "Logout"))));
+        React__default['default'].createElement(Flex, { justifyContent: "center" })));
 };
 
 var useWalletModal = function (login, logout, account) {
@@ -2050,13 +2044,7 @@ var Banner = function () {
                 React__default['default'].createElement("div", { className: "col-sm-12 col-md-12 inner-banner-text text-center" },
                     React__default['default'].createElement("div", { className: "innerbannercopy" },
                         React__default['default'].createElement("h1", null, "Discover, Collect, and Trade NFTs"),
-                        React__default['default'].createElement("p", null, "A curated marketplace for the dark underdwellers."),
-                        React__default['default'].createElement("div", { className: "innerbannercopy-btn" },
-                            React__default['default'].createElement("ul", null,
-                                React__default['default'].createElement("li", null,
-                                    React__default['default'].createElement(reactRouterDom.Link, { to: "/", className: "btn-white" }, "APPLY TO BE LISTED")),
-                                React__default['default'].createElement("li", null,
-                                    React__default['default'].createElement(reactRouterDom.Link, { to: "/", className: "btn-black" }, "EXPLORE"))))))),
+                        React__default['default'].createElement("p", null, "A curated marketplace for the dark underdwellers.")))),
             React__default['default'].createElement("div", { className: "row" },
                 React__default['default'].createElement("div", { className: "col-sm-12 col-md-12 specialcard-wrap" },
                     React__default['default'].createElement("div", { className: "specialcard" },
@@ -2149,33 +2137,8 @@ var Header = function (_a) {
                                         React__default['default'].createElement(UserBlock, { account: account, login: login, logout: logout }),
                                         profile && React__default['default'].createElement(Avatar, { profile: profile }))),
                                 React__default['default'].createElement("li", null,
-                                    React__default['default'].createElement(reactRouterDom.Link, { to: "/my-nft", className: "cmynft", "data-bs-toggle": "modal", "data-bs-target": "#myNft" },
-                                        React__default['default'].createElement("div", null, "My NFT")))))),
-                    React__default['default'].createElement("div", { className: "ctm-modal modal fade", id: "myNft", tabIndex: -1, "aria-labelledby": "exampleModalLabel", "aria-hidden": "true" },
-                        React__default['default'].createElement("div", { className: "modal-dialog ctmmodal-dialog" },
-                            React__default['default'].createElement("div", { className: "modal-content" },
-                                React__default['default'].createElement("div", { className: "modal-header" },
-                                    React__default['default'].createElement("h5", { className: "modal-title", id: "exampleModalLabel" },
-                                        React__default['default'].createElement("img", { src: "/assets/images/wallet.svg", alt: "wallet icon" }),
-                                        "Account"),
-                                    React__default['default'].createElement("button", { type: "button", className: "btn-close ctm-btnclose", "data-bs-dismiss": "modal", "aria-label": "Close" }, "CANCEL")),
-                                React__default['default'].createElement("div", { className: "modal-body" },
-                                    React__default['default'].createElement("hr", null),
-                                    React__default['default'].createElement("p", null,
-                                        "Connected with ",
-                                        React__default['default'].createElement("b", null, "Wallet Connect")),
-                                    React__default['default'].createElement("ul", { className: "mynft-body" },
-                                        React__default['default'].createElement("li", null,
-                                            React__default['default'].createElement(reactRouterDom.Link, { to: "/" },
-                                                "0x1b82...6666",
-                                                ' ',
-                                                React__default['default'].createElement("span", null,
-                                                    React__default['default'].createElement("img", { src: "/assets/images/external-link.svg", alt: "external" }))))),
-                                    React__default['default'].createElement("ul", { className: "account-action" },
-                                        React__default['default'].createElement("li", null,
-                                            React__default['default'].createElement(reactRouterDom.Link, { to: "/" }, "Log Out")),
-                                        React__default['default'].createElement("li", null,
-                                            React__default['default'].createElement(reactRouterDom.Link, { to: "/" }, "Copy Address"))))))))),
+                                    React__default['default'].createElement(reactRouterDom.Link, { to: account ? "/my-nft" : "", className: "cmynft" },
+                                        React__default['default'].createElement("div", null, "My NFT")))))))),
             isHome && React__default['default'].createElement(Banner, null))));
 };
 var Header$1 = React__default['default'].memo(Header);

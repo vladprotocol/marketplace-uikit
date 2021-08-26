@@ -109,60 +109,13 @@ const Header: React.FC<Props> = ({
                 </li>
                 {/* End of Wallet Popup */}
                 <li>
-                  <Link to="/my-nft" className="cmynft" data-bs-toggle="modal" data-bs-target="#myNft">
+                  <Link to={account ? "/my-nft" : "" } className="cmynft">
                     <div>My NFT</div>
                   </Link>
                 </li>
               </ul>
             </div>
           </div>
-          {/* Connect myNft Popup */}
-          <div
-            className="ctm-modal modal fade"
-            id="myNft"
-            tabIndex={-1}
-            aria-labelledby="exampleModalLabel"
-            aria-hidden="true"
-          >
-            <div className="modal-dialog ctmmodal-dialog">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h5 className="modal-title" id="exampleModalLabel">
-                    <img src="/assets/images/wallet.svg" alt="wallet icon" />
-                    Account
-                  </h5>
-                  <button type="button" className="btn-close ctm-btnclose" data-bs-dismiss="modal" aria-label="Close">
-                    CANCEL
-                  </button>
-                </div>
-                <div className="modal-body">
-                  <hr />
-                  <p>
-                    Connected with <b>Wallet Connect</b>
-                  </p>
-                  <ul className="mynft-body">
-                    <li>
-                      <Link to="/">
-                        0x1b82...6666{' '}
-                        <span>
-                          <img src="/assets/images/external-link.svg" alt="external" />
-                        </span>
-                      </Link>
-                    </li>
-                  </ul>
-                  <ul className="account-action">
-                    <li>
-                      <Link to="/">Log Out</Link>
-                    </li>
-                    <li>
-                      <Link to="/">Copy Address</Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* End of Wallet Popup */}
         </nav>
       </section>
       {/* <!-- End of Navigation --> */}

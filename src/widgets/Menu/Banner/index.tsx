@@ -10,7 +10,7 @@ const Banner = () => {
               <div className="innerbannercopy">
                 <h1>Discover, Collect, and Trade NFTs</h1>
                 <p>A curated marketplace for the dark underdwellers.</p>
-                <div className="innerbannercopy-btn">
+                {/* <div className="innerbannercopy-btn">
                   <ul>
                     <li>
                       <Link to="/" className="btn-white">
@@ -23,7 +23,7 @@ const Banner = () => {
                       </Link>
                     </li>
                   </ul>
-                </div>
+                </div> */}
               </div>
               {/* <div class="downarrow">
                               <img src="assets/images/scroll-down-icon.svg" class="img-fluid" alt="">

@@ -1998,19 +1998,13 @@ var CopyToClipboard = function (_a) {
 var templateObject_1$y, templateObject_2$a;
 
 var AccountModal = function (_a) {
-    var account = _a.account, logout = _a.logout, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
+    var account = _a.account; _a.logout; var _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
     return (React.createElement(Modal, { title: "Your wallet", onDismiss: onDismiss },
         React.createElement(Text, { fontSize: "20px", bold: true, style: { whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "8px" } }, account),
         React.createElement(Flex, { mb: "32px" },
             React.createElement(LinkExternal, { small: true, href: "https://bscscan.com/address/" + account, mr: "16px" }, "View on BscScan"),
             React.createElement(CopyToClipboard, { toCopy: account }, "Copy Address")),
-        React.createElement(Flex, { justifyContent: "center" },
-            React.createElement(Button, { onClick: function () {
-                    logout();
-                    window.localStorage.removeItem(localStorageKey);
-                    onDismiss();
-                    window.location.reload();
-                } }, "Logout"))));
+        React.createElement(Flex, { justifyContent: "center" })));
 };
 
 var useWalletModal = function (login, logout, account) {
@@ -2037,13 +2031,7 @@ var Banner = function () {
                 React.createElement("div", { className: "col-sm-12 col-md-12 inner-banner-text text-center" },
                     React.createElement("div", { className: "innerbannercopy" },
                         React.createElement("h1", null, "Discover, Collect, and Trade NFTs"),
-                        React.createElement("p", null, "A curated marketplace for the dark underdwellers."),
-                        React.createElement("div", { className: "innerbannercopy-btn" },
-                            React.createElement("ul", null,
-                                React.createElement("li", null,
-                                    React.createElement(Link$1, { to: "/", className: "btn-white" }, "APPLY TO BE LISTED")),
-                                React.createElement("li", null,
-                                    React.createElement(Link$1, { to: "/", className: "btn-black" }, "EXPLORE"))))))),
+                        React.createElement("p", null, "A curated marketplace for the dark underdwellers.")))),
             React.createElement("div", { className: "row" },
                 React.createElement("div", { className: "col-sm-12 col-md-12 specialcard-wrap" },
                     React.createElement("div", { className: "specialcard" },
@@ -2136,33 +2124,8 @@ var Header = function (_a) {
                                         React.createElement(UserBlock, { account: account, login: login, logout: logout }),
                                         profile && React.createElement(Avatar, { profile: profile }))),
                                 React.createElement("li", null,
-                                    React.createElement(Link$1, { to: "/my-nft", className: "cmynft", "data-bs-toggle": "modal", "data-bs-target": "#myNft" },
-                                        React.createElement("div", null, "My NFT")))))),
-                    React.createElement("div", { className: "ctm-modal modal fade", id: "myNft", tabIndex: -1, "aria-labelledby": "exampleModalLabel", "aria-hidden": "true" },
-                        React.createElement("div", { className: "modal-dialog ctmmodal-dialog" },
-                            React.createElement("div", { className: "modal-content" },
-                                React.createElement("div", { className: "modal-header" },
-                                    React.createElement("h5", { className: "modal-title", id: "exampleModalLabel" },
-                                        React.createElement("img", { src: "/assets/images/wallet.svg", alt: "wallet icon" }),
-                                        "Account"),
-                                    React.createElement("button", { type: "button", className: "btn-close ctm-btnclose", "data-bs-dismiss": "modal", "aria-label": "Close" }, "CANCEL")),
-                                React.createElement("div", { className: "modal-body" },
-                                    React.createElement("hr", null),
-                                    React.createElement("p", null,
-                                        "Connected with ",
-                                        React.createElement("b", null, "Wallet Connect")),
-                                    React.createElement("ul", { className: "mynft-body" },
-                                        React.createElement("li", null,
-                                            React.createElement(Link$1, { to: "/" },
-                                                "0x1b82...6666",
-                                                ' ',
-                                                React.createElement("span", null,
-                                                    React.createElement("img", { src: "/assets/images/external-link.svg", alt: "external" }))))),
-                                    React.createElement("ul", { className: "account-action" },
-                                        React.createElement("li", null,
-                                            React.createElement(Link$1, { to: "/" }, "Log Out")),
-                                        React.createElement("li", null,
-                                            React.createElement(Link$1, { to: "/" }, "Copy Address"))))))))),
+                                    React.createElement(Link$1, { to: account ? "/my-nft" : "", className: "cmynft" },
+                                        React.createElement("div", null, "My NFT")))))))),
             isHome && React.createElement(Banner, null))));
 };
 var Header$1 = React.memo(Header);
