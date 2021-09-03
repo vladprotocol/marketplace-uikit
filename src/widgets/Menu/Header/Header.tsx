@@ -29,7 +29,7 @@ const Header: React.FC<Props> = ({
         <section className="navbar-sec">
           <nav className="navbar navbar-expand-lg navbar-dark">
             <div className="container">
-              <a className="navbar-brand" href="./">
+              <a className="navbar-brand" href="/">
                 <i>
                   <img src="/assets/images/vladcirclelogo.png" className="img-fluid" alt="Vlad Finance Logo" />
                 </i>
@@ -109,15 +109,9 @@ const Header: React.FC<Props> = ({
                   </li>
                   {/* End of Wallet Popup */}
                   <li>
-                    {
-                      account
-                      ? 
-                      <Link to="/my-nft" className="cmynft">
-                        <div>My NFT</div>
-                      </Link>
-                      :
-                      <div className="cmynft">My NFT</div>
-                    }
+                    <Link to={account ? "/my-nft" : ""} className="cmynft">
+                      <div>My NFT</div>
+                    </Link>
                   </li>
                 </ul>
               </div>
