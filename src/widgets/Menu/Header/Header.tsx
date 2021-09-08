@@ -6,6 +6,7 @@ import Banner from '../Banner';
 import Avatar from "../Avatar";
 import { Login } from "../../WalletModal/types";
 import '../../../style/css/Header.css'
+import VLADWebSite  from '../../../constants';
 
 interface Props {
   account?: string;
@@ -50,7 +51,7 @@ const Header: React.FC<Props> = ({
               <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav ms-auto mb-2 mb-lg-0 tp-nav">
                   <li className="nav-item">
-                    <Link className="nav-link" to="/token-facts.html">
+                    <Link className="nav-link" target="_blank" to={`${VLADWebSite.BASE_URL}/${VLADWebSite.TOKEN_FACTS}`} rel="noopener noreferrer" >
                       Token Facts
                     </Link>
                   </li>
