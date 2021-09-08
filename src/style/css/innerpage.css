@@ -1552,3 +1552,27 @@ border-radius: 16px;
     @media (min-width: 1366px){
     
     }
+
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.btn-with-icon {
+    display: flex;
+    justify-content: space-between;
+    background-color: #000000;
+    padding: 8px 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    color: #B90D0D;
+}
+
+.btn-with-icon:hover {
+    color: #de2828;
+}
+
+/* Wallet Modal */
+.wallet-modal .btn {
+    margin-top: 15px;
+}
