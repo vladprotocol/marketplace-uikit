@@ -1,8 +1,12 @@
-// VLAD Website Links
-const VLADWebsite = {
-    BASE_URL: 'https://vlad.finance',
+// VLAD Links
+const VLADLink = {
+    SITE_BASE_URL: 'https://vlad.finance',
+    APP_BASE_URL: 'https://app.vlad.finance',
     TOKEN_FACTS: 'token-facts',
+    FARMS: 'farms',
+    NFT: 'nft',
+    TEAM: 'team'
     
 };
 
-export default VLADWebsite;
+export default VLADLink;

@@ -14,15 +14,34 @@ interface Props {
 const WalletCard: React.FC<Props> = ({ login, walletConfig, onDismiss, mb }) => {
   const { title, icon: Icon } = walletConfig;
   return (
-      <button type="button"
-        className="btn btn-with-icon text-uppercase"
-        onClick={() => {
+
+    <Button
+      fullWidth
+      variant="tertiary"
+      onClick={() => {
         login(walletConfig.connectorId);
         window.localStorage.setItem(localStorageKey, "1");
         onDismiss();
-        }}>
-          {title} <span><Icon width="32px" /></span>
-      </button>
+      }}
+      style={{ justifyContent: "space-between" }}
+      mb={mb}
+      id={`wallet-connect-${title.toLocaleLowerCase()}`}
+    >
+      <Text bold color="primary" mr="16px">
+        {title}
+      </Text>
+      <Icon width="32px" />
+    </Button>
+
+      // <button type="button"
+      //   className="btn btn-with-icon text-uppercase"
+      //   onClick={() => {
+      //   login(walletConfig.connectorId);
+      //   window.localStorage.setItem(localStorageKey, "1");
+      //   onDismiss();
+      //   }}>
+      //     {title} <span><Icon width="32px" /></span>
+      // </button>
   );
 };
 

@@ -6,7 +6,7 @@ import Banner from '../Banner';
 import Avatar from "../Avatar";
 import { Login } from "../../WalletModal/types";
 import '../../../style/css/Header.css'
-import VLADWebSite  from '../../../constants';
+import VLADLink  from '../../../constants';
 
 interface Props {
   account?: string;
@@ -51,24 +51,24 @@ const Header: React.FC<Props> = ({
               <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav ms-auto mb-2 mb-lg-0 tp-nav">
                   <li className="nav-item">
-                    <Link className="nav-link" target="_blank" to={`${VLADWebSite.BASE_URL}/${VLADWebSite.TOKEN_FACTS}`} rel="noopener noreferrer" >
+                    <Link className="nav-link" target="_blank" to={{ pathname: `${VLADLink.SITE_BASE_URL}/${VLADLink.TOKEN_FACTS}` }} rel="noopener noreferrer" >
                       Token Facts
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="https://app.vlad.finance">
+                    <Link className="nav-link" target="_blank" to={{ pathname: `${VLADLink.APP_BASE_URL}/${VLADLink.FARMS}` }} rel="noopener noreferrer">
                       Farms
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="https://app.vlad.finance/nft">
+                    <Link className="nav-link" target="_blank" to={{ pathname: `${VLADLink.APP_BASE_URL}/${VLADLink.NFT}` }} rel="noopener noreferrer">
                       NFTs
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="team.html">
+                  <Link className="nav-link" target="_blank" to={{ pathname: `${VLADLink.SITE_BASE_URL}/${VLADLink.TEAM}` }} rel="noopener noreferrer">
                       Team
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
                     <Link className="nav-link pactive" to="/">
@@ -78,21 +78,21 @@ const Header: React.FC<Props> = ({
                 </ul>
                 <ul className="top-sm-nav ms-3">
                   <li>
-                    <Link to="https://t.me/VladFinanceOfficial" >
+                    <Link target="_blank" to={{ pathname: "https://t.me/VladFinanceOfficial" }} rel="noopener noreferrer" >
                       <div>
                         <img src="/assets/images/telegramicon.svg" className="img-fluid" alt="" />
                       </div>
                     </Link>
                   </li>
                   <li>
-                    <Link to="https://vlad-finance.medium.com/">
+                    <Link target="_blank" to={{ pathname: "https://vlad-finance.medium.com/" }} rel="noopener noreferrer" >
                       <div>
                         <img src="/assets/images/mediumicon.svg" className="img-fluid" alt="" />
                       </div>
                     </Link>
                   </li>
                   <li>
-                    <Link to="https://twitter.com/VladFinance">
+                    <Link target="_blank" to={{ pathname: "https://twitter.com/VladFinance" }} rel="noopener noreferrer" >
                       <div>
                         <img src="/assets/images/twitter-logo.svg" className="img-fluid" alt="" />
                       </div>
