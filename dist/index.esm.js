@@ -1947,66 +1947,41 @@ var connectors = [
 var localStorageKey = "accountStatus";
 
 var WalletCard = function (_a) {
-    var login = _a.login, walletConfig = _a.walletConfig, onDismiss = _a.onDismiss, mb = _a.mb;
+    var login = _a.login, walletConfig = _a.walletConfig, onDismiss = _a.onDismiss; _a.mb;
     var title = walletConfig.title, Icon = walletConfig.icon;
-    return (React.createElement(Button, { fullWidth: true, variant: "tertiary", onClick: function () {
+    return (React.createElement("button", { type: "button", className: "btn btn-with-icon text-uppercase", onClick: function () {
             login(walletConfig.connectorId);
             window.localStorage.setItem(localStorageKey, "1");
             onDismiss();
-        }, style: { justifyContent: "space-between" }, mb: mb, id: "wallet-connect-" + title.toLocaleLowerCase() },
-        React.createElement(Text, { bold: true, color: "primary", mr: "16px" }, title),
-        React.createElement(Icon, { width: "32px" }))
-    // <button type="button"
-    //   className="btn btn-with-icon text-uppercase"
-    //   onClick={() => {
-    //   login(walletConfig.connectorId);
-    //   window.localStorage.setItem(localStorageKey, "1");
-    //   onDismiss();
-    //   }}>
-    //     {title} <span><Icon width="32px" /></span>
-    // </button>
-    );
+        } },
+        title,
+        " ",
+        React.createElement("span", null,
+            React.createElement(Icon, { width: "32px" }))));
 };
 
 styled(Link)(templateObject_1$x || (templateObject_1$x = __makeTemplateObject(["\n  display: flex;\n  align-self: center;\n  align-items: center;\n  margin-top: 24px;\n"], ["\n  display: flex;\n  align-self: center;\n  align-items: center;\n  margin-top: 24px;\n"])));
 var ConnectModal = function (_a) {
     var login = _a.login, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
-    return (React.createElement(Modal, { title: "Connect to a wallet", onDismiss: onDismiss }, connectors.map(function (entry, index) { return (React.createElement(WalletCard, { key: entry.title, login: login, walletConfig: entry, onDismiss: onDismiss, mb: index < connectors.length - 1 ? "8px" : "0" })); }))
-    // <div className="ctm-modal modal fade wallet-modal" id="connectNft">
-    //   <div className="modal-dialog ctmmodal-dialog">
-    //     <div className="modal-content">
-    //       <div className="modal-header">
-    //         <h5 className="modal-title" id="exampleModalLabel">Connect to a wallet</h5>
-    //         <button type="button" className="btn-close ctm-btnclose" data-bs-dismiss="modal" aria-label="Close" onClick={onDismiss}>CANCEL</button>
-    //       </div>
-    //       <div className="modal-body">
-    //         <div className="wallet-body">
-    //             {config.map((entry, index) => (
-    //                 <WalletCard
-    //                   key={entry.title}
-    //                   login={login}
-    //                   walletConfig={entry}
-    //                   onDismiss={onDismiss}
-    //                   mb={index < config.length - 1 ? "8px" : "0"}
-    //                 />
-    //             ))}
-    //         </div>
-    //         <ul className="wallet-help">
-    //           <li><a href="#">Learn how to connect <span><img src="assets/images/righticon.svg" alt="question" /></span></a></li>
-    //         </ul>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
-    );
+    return (React.createElement("div", { className: "ctm-modal modal fade show wallet-modal", id: "connectNft", style: { display: 'block' } },
+        React.createElement("div", { className: "modal-dialog ctmmodal-dialog" },
+            React.createElement("div", { className: "modal-content" },
+                React.createElement("div", { className: "modal-header" },
+                    React.createElement("h5", { className: "modal-title", id: "exampleModalLabel" }, "Connect to a wallet"),
+                    React.createElement("button", { type: "button", className: "btn-close ctm-btnclose", "data-bs-dismiss": "modal", "aria-label": "Close", onClick: onDismiss }, "CANCEL")),
+                React.createElement("div", { className: "modal-body" },
+                    React.createElement("div", { className: "wallet-body" }, connectors.map(function (entry, index) { return (React.createElement(WalletCard, { key: entry.title, login: login, walletConfig: entry, onDismiss: onDismiss, mb: index < connectors.length - 1 ? "8px" : "0" })); })),
+                    React.createElement("ul", { className: "wallet-help" },
+                        React.createElement("li", null,
+                            React.createElement("a", { href: "https://docs.pancakeswap.finance/guides/faq#how-do-i-set-up-my-wallet-on-binance-smart-chain" },
+                                "Learn how to connect ",
+                                React.createElement("span", null,
+                                    React.createElement("img", { src: "assets/images/righticon.svg", alt: "question" }))))))))));
 };
 var templateObject_1$x;
 
-var StyleButton = styled(Text).attrs({ role: "button" })(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  align-items: center;\n  color: ", ";\n"], ["\n  position: relative;\n  display: flex;\n  align-items: center;\n  color: ", ";\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.colors.primary;
-});
-var Tooltip = styled.div(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  display: ", ";\n  position: absolute;\n  bottom: -22px;\n  right: 0;\n  left: 0;\n  text-align: center;\n  background-color: ", ";\n  color: ", ";\n  border-radius: 16px;\n  opacity: 0.7;\n"], ["\n  display: ", ";\n  position: absolute;\n  bottom: -22px;\n  right: 0;\n  left: 0;\n  text-align: center;\n  background-color: ", ";\n  color: ", ";\n  border-radius: 16px;\n  opacity: 0.7;\n"])), function (_a) {
+styled.div.attrs({ role: "button" })(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  position: relative;\n  font-weight: 600;\n  font-size: 14px;\n  color: #B90D0D;\n  display: flex;\n  align-items: center;\n"], ["\n  position: relative;\n  font-weight: 600;\n  font-size: 14px;\n  color: #B90D0D;\n  display: flex;\n  align-items: center;\n"])));
+styled.div(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  display: ", ";\n  position: absolute;\n  bottom: -22px;\n  right: 0;\n  left: 0;\n  text-align: center;\n  background-color: ", ";\n  color: ", ";\n  border-radius: 16px;\n  opacity: 0.7;\n"], ["\n  display: ", ";\n  position: absolute;\n  bottom: -22px;\n  right: 0;\n  left: 0;\n  text-align: center;\n  background-color: ", ";\n  color: ", ";\n  border-radius: 16px;\n  opacity: 0.7;\n"])), function (_a) {
     var isTooltipDisplayed = _a.isTooltipDisplayed;
     return (isTooltipDisplayed ? "block" : "none");
 }, function (_a) {
@@ -2019,7 +1994,7 @@ var Tooltip = styled.div(templateObject_2$a || (templateObject_2$a = __makeTempl
 var CopyToClipboard = function (_a) {
     var toCopy = _a.toCopy, children = _a.children, props = __rest(_a, ["toCopy", "children"]);
     var _b = useState(false), isTooltipDisplayed = _b[0], setIsTooltipDisplayed = _b[1];
-    return (React.createElement(StyleButton, __assign({ small: true, bold: true, onClick: function () {
+    return (React.createElement("button", __assign({ type: "button", className: "text-uppercase", onClick: function () {
             if (navigator.clipboard) {
                 navigator.clipboard.writeText(toCopy);
                 setIsTooltipDisplayed(true);
@@ -2030,24 +2005,68 @@ var CopyToClipboard = function (_a) {
         } }, props),
         children,
         React.createElement(Icon$n, { width: "20px", color: "primary", ml: "4px" }),
-        React.createElement(Tooltip, { isTooltipDisplayed: isTooltipDisplayed }, "Copied")));
+        isTooltipDisplayed && React.createElement("span", { className: "btn-tooltip" }, "Copied")));
 };
 var templateObject_1$y, templateObject_2$a;
 
 var AccountModal = function (_a) {
     var account = _a.account, logout = _a.logout, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
-    return (React.createElement(Modal, { title: "Your wallet", onDismiss: onDismiss },
-        React.createElement(Text, { fontSize: "20px", bold: true, style: { whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "8px" } }, account),
-        React.createElement(Flex, { mb: "32px" },
-            React.createElement(LinkExternal, { small: true, href: "https://bscscan.com/address/" + account, mr: "16px" }, "View on BscScan"),
-            React.createElement(CopyToClipboard, { toCopy: account }, "Copy Address")),
-        React.createElement(Flex, { justifyContent: "center" },
-            React.createElement(Text, { fontSize: "20px", bold: true, style: { whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "8px" }, onClick: function () {
-                    logout();
-                    window.localStorage.removeItem(localStorageKey);
-                    onDismiss();
-                    window.location.reload();
-                } }, "Logout"))));
+    return (
+    // <Modal title="Your wallet" onDismiss={onDismiss}>
+    //   <Text
+    //     fontSize="20px"
+    //     bold
+    //     style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "8px" }}
+    //   >
+    //     {account}
+    //   </Text>
+    //   <Flex mb="32px">
+    //     <LinkExternal small href={`https://bscscan.com/address/${account}`} mr="16px">
+    //       View on BscScan
+    //     </LinkExternal>
+    //     <CopyToClipboard toCopy={account}>Copy Address</CopyToClipboard>
+    //   </Flex>
+    //   <Flex justifyContent="center">
+    //     <Text
+    //       fontSize="20px"
+    //       bold
+    //       style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "8px" }}
+    //       onClick={() => {
+    //         logout();
+    //         window.localStorage.removeItem(localStorageKey);
+    //         onDismiss();
+    //         window.location.reload();
+    //       }}
+    //     >
+    //       Logout
+    //     </Text>
+    //   </Flex>
+    // </Modal>
+    React.createElement("div", { className: "ctm-modal modal fade show", id: "myNft", style: { display: 'block' }, tabIndex: -1, "aria-labelledby": "exampleModalLabel", "aria-hidden": "true" },
+        React.createElement("div", { className: "modal-dialog ctmmodal-dialog" },
+            React.createElement("div", { className: "modal-content" },
+                React.createElement("div", { className: "modal-header" },
+                    React.createElement("h5", { className: "modal-title", id: "exampleModalLabel" },
+                        React.createElement("img", { src: "/assets/images/wallet.svg", alt: "wallet icon" }),
+                        "Account"),
+                    React.createElement("button", { type: "button", className: "btn-close ctm-btnclose", "data-bs-dismiss": "modal", "aria-label": "Close", onClick: onDismiss }, "CANCEL")),
+                React.createElement("div", { className: "modal-body" },
+                    React.createElement("hr", null),
+                    React.createElement("ul", { className: "mynft-body" },
+                        React.createElement("li", null,
+                            React.createElement("a", { href: "https://bscscan.com/address/" + account, target: "_blank", rel: "noreferrer" },
+                                account,
+                                " ",
+                                React.createElement("span", null,
+                                    React.createElement("img", { src: "assets/images/external-link.svg", alt: "external" }))))),
+                    React.createElement("div", { className: "account-action" },
+                        React.createElement("button", { type: "button", className: "text-uppercase", onClick: function () {
+                                logout();
+                                window.localStorage.removeItem(localStorageKey);
+                                onDismiss();
+                                window.location.reload();
+                            } }, "Logout"),
+                        React.createElement(CopyToClipboard, { toCopy: account }, "Copy Address")))))));
 };
 
 var useWalletModal = function (login, logout, account) {
