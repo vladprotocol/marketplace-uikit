@@ -22,7 +22,7 @@ const AccountModal: React.FC<Props> = ({ account, logout, onDismiss = () => null
           {/* <p>Connected with <b>Wallet Connect</b></p> */}
           <ul className="mynft-body">
             <li>
-              <a href={`https://bscscan.com/address/${account}`} target="_blank" rel="noreferrer">{account} <span><img src="assets/images/external-link.svg" alt="external" /></span></a>
+              <a href={`https://bscscan.com/address/${account}`} target="_blank" rel="noreferrer">{account} <span><img src="/assets/images/external-link.svg" alt="external" /></span></a>
             </li>
           </ul>
           <div className="account-action">
