@@ -34,7 +34,7 @@ const Header: React.FC<Props> = ({
                 <i>
                   <img src="/assets/images/vladcirclelogo.png" className="img-fluid" alt="Vlad Finance Logo" />
                 </i>
-                Vlad.Finance
+                AfterLife.Finance
               </a>
               <button
                 className="navbar-toggler"
