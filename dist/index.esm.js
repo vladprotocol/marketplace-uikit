@@ -2013,7 +2013,7 @@ var AccountModal = function (_a) {
                                 account,
                                 " ",
                                 React.createElement("span", null,
-                                    React.createElement("img", { src: "assets/images/external-link.svg", alt: "external" }))))),
+                                    React.createElement("img", { src: "/assets/images/external-link.svg", alt: "external" }))))),
                     React.createElement("div", { className: "account-action" },
                         React.createElement("button", { type: "button", className: "text-uppercase", onClick: function () {
                                 logout();
@@ -2033,7 +2033,7 @@ var useWalletModal = function (login, logout, account) {
 var UserBlock = function (_a) {
     var account = _a.account, login = _a.login, logout = _a.logout;
     var _b = useWalletModal(login, logout, account), onPresentConnectModal = _b.onPresentConnectModal, onPresentAccountModal = _b.onPresentAccountModal;
-    var accountEllipsis = account ? account.substring(0, 4) + "..." + account.substring(account.length - 4) : null;
+    var accountEllipsis = account ? account.substring(0, 4) + "..." + account.substring(account.length - 3) : null;
     return (React.createElement("a", { className: "cwallet" }, account ? (React.createElement(Button, { size: "sm", variant: "popup", onClick: function () {
             onPresentAccountModal();
         } }, accountEllipsis)) : (React.createElement(Button, { size: "sm", variant: "popup", onClick: function () {
@@ -2117,7 +2117,7 @@ var Header = function (_a) {
                         React.createElement("a", { className: "navbar-brand", href: "/" },
                             React.createElement("i", null,
                                 React.createElement("img", { src: "/assets/images/vladcirclelogo.png", className: "img-fluid", alt: "Vlad Finance Logo" })),
-                            "Vlad.Finance"),
+                            "AfterLife.Finance"),
                         React.createElement("button", { className: "navbar-toggler", id: "mbtn", type: "button", "data-bs-toggle": "collapse", "data-bs-target": "#navbarSupportedContent", "aria-controls": "navbarSupportedContent", "aria-expanded": "false", "aria-label": "Toggle navigation" },
                             React.createElement("span", { className: "navbar-toggler-icon" })),
                         React.createElement("div", { className: "collapse navbar-collapse", id: "navbarSupportedContent" },

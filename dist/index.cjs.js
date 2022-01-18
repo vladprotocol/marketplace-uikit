@@ -2026,7 +2026,7 @@ var AccountModal = function (_a) {
                                 account,
                                 " ",
                                 React__default['default'].createElement("span", null,
-                                    React__default['default'].createElement("img", { src: "assets/images/external-link.svg", alt: "external" }))))),
+                                    React__default['default'].createElement("img", { src: "/assets/images/external-link.svg", alt: "external" }))))),
                     React__default['default'].createElement("div", { className: "account-action" },
                         React__default['default'].createElement("button", { type: "button", className: "text-uppercase", onClick: function () {
                                 logout();
@@ -2046,7 +2046,7 @@ var useWalletModal = function (login, logout, account) {
 var UserBlock = function (_a) {
     var account = _a.account, login = _a.login, logout = _a.logout;
     var _b = useWalletModal(login, logout, account), onPresentConnectModal = _b.onPresentConnectModal, onPresentAccountModal = _b.onPresentAccountModal;
-    var accountEllipsis = account ? account.substring(0, 4) + "..." + account.substring(account.length - 4) : null;
+    var accountEllipsis = account ? account.substring(0, 4) + "..." + account.substring(account.length - 3) : null;
     return (React__default['default'].createElement("a", { className: "cwallet" }, account ? (React__default['default'].createElement(Button, { size: "sm", variant: "popup", onClick: function () {
             onPresentAccountModal();
         } }, accountEllipsis)) : (React__default['default'].createElement(Button, { size: "sm", variant: "popup", onClick: function () {
@@ -2130,7 +2130,7 @@ var Header = function (_a) {
                         React__default['default'].createElement("a", { className: "navbar-brand", href: "/" },
                             React__default['default'].createElement("i", null,
                                 React__default['default'].createElement("img", { src: "/assets/images/vladcirclelogo.png", className: "img-fluid", alt: "Vlad Finance Logo" })),
-                            "Vlad.Finance"),
+                            "AfterLife.Finance"),
                         React__default['default'].createElement("button", { className: "navbar-toggler", id: "mbtn", type: "button", "data-bs-toggle": "collapse", "data-bs-target": "#navbarSupportedContent", "aria-controls": "navbarSupportedContent", "aria-expanded": "false", "aria-label": "Toggle navigation" },
                             React__default['default'].createElement("span", { className: "navbar-toggler-icon" })),
                         React__default['default'].createElement("div", { className: "collapse navbar-collapse", id: "navbarSupportedContent" },
