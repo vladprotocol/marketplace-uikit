@@ -111,7 +111,7 @@ const Header: React.FC<Props> = ({
                   {/* End of Wallet Popup */}
                   <li>
                     <Link to={account ? "/my-nft" : ""} className="cmynft">
-                      <div>My NFT</div>
+                      <div>My NFTs</div>
                     </Link>
                   </li>
                 </ul>
